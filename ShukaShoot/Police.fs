@@ -59,5 +59,9 @@ let (|CoffeeTweet|_|) = function
     | _ -> None
 
 let (|StrictCoffeeTweet|_|) = function
-    | Twitter.Tweet(m) when isStrictCoffee m.Status.Text -> Some(m, m.Status.Id)
+    | Twitter.Tweet(m) -> 
+        match m with
+        | Twitter.Retweet(_) -> None
+        | _ when isStrictCoffee m.Status.Text -> Some(m, m.Status.Id)
+        | _ -> None
     | _ -> None
