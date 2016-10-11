@@ -1,4 +1,4 @@
-﻿module Adacola.ShukaShoot.Twitter
+module Adacola.ShukaShoot.Twitter
 
 open System.Reactive.Linq
 open CoreTweet
@@ -18,6 +18,9 @@ let getTimelineConnection (tokens : Tokens) =
 let favoriteTweet (tokens : Tokens) (statusID : int64) =
     tokens.Favorites.CreateAsync(statusID) |> Async.AwaitTask
 
+let retweet (tokens : Tokens) (statusID : int64) =
+    tokens.Statuses.RetweetAsync(statusID) |> Async.AwaitTask
+
 let (|MyTweet|Tweet|OtherMessage|) (message : StreamingMessage) =
     match message with
     | :? StatusMessage as m ->
@@ -28,3 +31,5 @@ let (|MyTweet|Tweet|OtherMessage|) (message : StreamingMessage) =
 let (|Retweet|_|) (message : StatusMessage) = message.Status.RetweetedStatus |> Option.ofObj
 
 let toLocal (m : StatusMessage) = m.Timestamp.LocalDateTime
+
+let isReplyTo userID (m : StatusMessage) = m.Status.InReplyToUserId |> Option.ofNullable |> Option.exists ((=) userID)
