@@ -26,7 +26,7 @@ let favorite tokens statusID =
     }
 
 let isFavoriteText text =
-    Regex.IsMatch(text, @"((し|シ)\s*(ゅ|ゆ|ュ|ユ)\s*(か|カ|力)\s*((し|シ)\s*(ゅ|ゆ|ュ|ユ)\s*(ー|う|ぅ|ウ|ゥ)|(ぴ|ピ))|朱夏)(?!警察)")
+    Regex.IsMatch(text, @"((し|シ)\s*(ゅ|ゆ|ュ|ユ)\s*(か|カ|力)\s*((し|シ)\s*(ゅ|ゆ|ュ|ユ)\s*(ー|う|ぅ|ウ|ゥ)|(ぴ|ピ))|(?!#)朱夏)(?!警察)")
 
 let isSuspendText text =
     Regex.IsMatch(text, @"(落ち(る|ります|よう?)|電源切(る|ります|ろう?)|寝(る|ます|よう?))$")

@@ -69,7 +69,8 @@ let main args =
                 } |> Async.Start
         Console.WriteLine("コーヒー警察起動")
         connection |> Observable.subscribe (function
-            | SuspendTweet(_) ->
+            | SuspendTweet(m) ->
+                Console.WriteLine("俺のツイート ({0}), コーヒー活動休止 : {1}\n", toLocal m, m.Status.Text)
                 Volatile.Write(myTweetCoffeeTime, None)
             | StrictCoffeeTweet(m, statusID) when Volatile.Read(myTweetCoffeeTime) |> Option.isNone ->
                 Console.WriteLine("コーヒーは {0} まで活動\n", (m.Timestamp + coffeeActiveTime).LocalDateTime)
