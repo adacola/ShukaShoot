@@ -6,3 +6,4 @@ nuget System.Reactive
 nuget CoreTweet
 nuget CoreTweet.FSharp
 nuget Argu
+nuget FsUnit

@@ -26,7 +26,7 @@ let favorite tokens statusID =
     }
 
 let isFavoriteText text =
-    Regex.IsMatch(text, @"((し|シ)\s*(ゅ|ゆ|ュ|ユ)\s*(か|カ|力)\s*((し|シ)\s*(ゅ|ゆ|ュ|ユ)\s*(ー|う|ぅ|ウ|ゥ)|(ぴ|ピ))|(?!#)朱夏)(?!警察)")
+    Regex.IsMatch(text, @"((し|シ)\s*(ゅ|ゆ|ュ|ユ)\s*(か|カ|力)\s*((し|シ)\s*(ゅ|ゆ|ュ|ユ)\s*(ー|う|ぅ|ウ|ゥ)|(ぴ|ピ))|(?<!#)朱夏)(?!警察)") && not (Regex.IsMatch(text, @"(\s|\A)@Saito_Shuka(\s|\Z)"))
 
 let isSuspendText text =
     Regex.IsMatch(text, @"(落ち(る|ります|よう?)|電源切(る|ります|ろう?)|寝(る|ます|よう?))$")
@@ -35,7 +35,7 @@ let isStrictCoffee text =
     Regex.IsMatch(text, @"\Aコーヒーこぼした\Z")
 
 let isCoffee text =
-    Regex.IsMatch(text, @"コーヒー.*(こぼし|零し|溢し)(ちゃっ|てしまっ|ちまっ)?(た|て)") && not (Regex.IsMatch(text, @"@(anju_inami|Rikako_Aida|suwananaka|box_komiyaarisa|Saito_Shuka|Aikyan_|Kanako_tktk|aina_suzuki723|furihata_ai|adacola)", RegexOptions.IgnoreCase))
+    Regex.IsMatch(text, @"コーヒー.*(こぼし|零し|溢し)(ちゃっ|てしまっ|ちまっ)?(た|て)") && not (Regex.IsMatch(text, @"(\s|\A)@(anju_inami|Rikako_Aida|suwananaka|box_komiyaarisa|Saito_Shuka|Aikyan_|Kanako_tktk|aina_suzuki723|furihata_ai|adacola)(\s|\Z)", RegexOptions.IgnoreCase))
 
 let (|FavoriteTweet|_|) = function
     | Twitter.MyTweet(_) -> None
