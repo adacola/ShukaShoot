@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{0332D1
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ShukaShoot", "ShukaShoot\ShukaShoot.fsproj", "{3D9BBAE5-0098-4C36-AF56-11330483045B}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ShukaShoot.Test", "ShukaShoot.Test\ShukaShoot.Test.fsproj", "{78EE9E7D-FAA9-4382-A0AE-882B4BB95F5F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{3D9BBAE5-0098-4C36-AF56-11330483045B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D9BBAE5-0098-4C36-AF56-11330483045B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D9BBAE5-0098-4C36-AF56-11330483045B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78EE9E7D-FAA9-4382-A0AE-882B4BB95F5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78EE9E7D-FAA9-4382-A0AE-882B4BB95F5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78EE9E7D-FAA9-4382-A0AE-882B4BB95F5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78EE9E7D-FAA9-4382-A0AE-882B4BB95F5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
