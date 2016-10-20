@@ -1,7 +1,0 @@
-{
-    "consumerKey": "key",
-    "consumerSecret": "pass",
-    "accessToken": "hoge",
-    "accessTokenSecret": "fuga",
-    "userId": 12345678901
-}
