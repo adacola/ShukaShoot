@@ -58,7 +58,7 @@
   -->
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="PoliceTest.fs" />
+    <Compile Include="ShukaPoliceTest.fs" />
     <None Include="paket.references" />
     <Content Include="App.config" />
   </ItemGroup>

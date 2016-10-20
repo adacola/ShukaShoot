@@ -2,7 +2,7 @@
 
 open FsUnit
 open NUnit.Framework
-open Adacola.ShukaShoot.Police
+open Adacola.ShukaShoot.ShukaPolice
 
 [<TestFixture>]
 module Police =
@@ -10,6 +10,10 @@ module Police =
     [<Test>]
     let ``isFavoriteTextで"しゅかしゅー"に対してtrueを返すこと`` () =
         "しゅかしゅー" |> isFavoriteText |> should equal true
+
+    [<Test>]
+    let ``isFavoriteTextで"しゅかしゅ～"に対してtrueを返すこと`` () =
+        "しゅかしゅ～" |> isFavoriteText |> should equal true
 
     [<Test>]
     let ``isFavoriteTextで"シュカシュー"に対してtrueを返すこと`` () =

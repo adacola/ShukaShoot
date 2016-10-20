@@ -1,0 +1,29 @@
+{
+    "auth": {
+        "consumerKey": "key",
+        "consumerSecret": "pass",
+        "accessToken": "hoge",
+        "accessTokenSecret": "fuga",
+        "userId": 12345678901
+    },
+    "shukasyuuPolice": {
+        "ignoreRatio": 0.1,
+        "waitSeconds": [
+            1,
+            3,
+            8,
+            13,
+            21,
+            34,
+            55,
+            89,
+            14
+        ]
+    },
+    "coffeePolice": {
+        "ignoreRatio": 0.0,
+        "waitSeconds": [
+            1
+        ]
+    }
+}
