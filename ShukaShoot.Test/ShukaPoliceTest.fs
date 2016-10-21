@@ -1,4 +1,4 @@
-﻿namespace Adacola.ShukaShoot.Test
+namespace Adacola.ShukaShoot.Test
 
 open FsUnit
 open NUnit.Framework
@@ -62,6 +62,10 @@ module Police =
     [<Test>]
     let ``isFavoriteTextで"しゅかしゅー"に改行が混入してtrueを返すこと`` () =
         "\nし\rゅ\r\nか\n\nし\r\rゅ\r\n\r\nー\n\n\n" |> isFavoriteText |> should equal true
+
+    [<Test>]
+    let ``isFavoriteTextで"しゅかしゅー"の縦書きでtrueを返すこと`` () =
+        "し\nゅ\nか\nし\nゅ\n l" |> isFavoriteText |> should equal true
 
     [<Test>]
     let ``isFavoriteTextで"朱夏"に対してtrueを返すこと`` () =
