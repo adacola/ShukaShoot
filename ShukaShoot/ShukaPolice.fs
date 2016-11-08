@@ -29,7 +29,9 @@ let favorite tokens statusID =
     }
 
 let isFavoriteText text =
-    Regex.IsMatch(text, @"((し|シ)\s*(ゅ|ゆ|ュ|ユ)\s*(か|カ|力)\s*((し|シ)\s*(ゅ|ゆ|ュ|ユ)\s*(ー|～|う|ぅ|ウ|ゥ|l)|(ぴ|ピ))|(?<!#)朱夏)(?!警察)") && not (Regex.IsMatch(text, @"(\s|\A)@Saito_Shuka(\s|\Z)"))
+    Regex.IsMatch(text, @"((し|シ)\s*(ゅ|ゆ|ュ|ユ)\s*(か|カ|力)\s*((し|シ)\s*(ゅ|ゆ|ュ|ユ)\s*(ー|～|う|ぅ|ウ|ゥ|l)|(ぴ|ピ))|朱夏)(?!警察)")
+    && not (Regex.IsMatch(text, @"(\s|\A)@Saito_Shuka(\s|\Z)"))
+    && not (Regex.IsMatch(text, @"(\s|\A)#朱夏取扱説明書(\s|\Z)"))
 
 let (|Tweet|_|) = function
     | Twitter.MyTweet(_) -> None

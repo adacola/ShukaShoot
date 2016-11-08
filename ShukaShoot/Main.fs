@@ -16,7 +16,7 @@ with
 
 [<EntryPoint>]
 let main args =
-    let parser = ArgumentParser.Create<Arguments>("ShukaShoot")
+    let parser = ArgumentParser.Create<Arguments>("ShukaShoot", errorHandler = ProcessExiter())
     let parseResult = parser.Parse(args)
     let isDebug = parseResult.Contains <@ Debug @>
 
