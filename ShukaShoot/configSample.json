@@ -7,6 +7,7 @@
         "userId": 12345678901
     },
     "shukasyuuPolice": {
+        "activeMinutes": 30,
         "ignoreRatio": 0.1,
         "waitSeconds": [
             1,
@@ -21,6 +22,7 @@
         ]
     },
     "coffeePolice": {
+        "activeMinutes": 10,
         "ignoreRatio": 0.0,
         "waitSeconds": [
             1

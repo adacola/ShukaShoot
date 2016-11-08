@@ -7,7 +7,7 @@ open MathNet.Numerics.Random
 let private random = MersenneTwister(true)
 let private shukaUserID = 215805231L
 
-let activeTime = TimeSpan.FromMinutes(60.0)
+let activeTime = Model.config.ShukasyuuPolice.ActiveMinutes |> float |> TimeSpan.FromMinutes
 
 let getFavoriteWaitSecond ignoreRatio (waitIntervals : int[]) =
     let ignoreValue = random.NextDouble()
@@ -29,7 +29,7 @@ let favorite tokens statusID =
     }
 
 let isFavoriteText text =
-    Regex.IsMatch(text, @"((し|シ)\s*(ゅ|ゆ|ュ|ユ)\s*(か|カ|力)\s*((し|シ)\s*(ゅ|ゆ|ュ|ユ)\s*(ー|～|う|ぅ|ウ|ゥ|l)|(ぴ|ピ))|朱夏)(?!警察)")
+    Regex.IsMatch(text, @"((し|シ)\s*(ゅ|ゆ|ュ|ユ)\s*(か|カ|力)\s*((し|シ)\s*(ゅ|ゆ|ュ|ユ)\s*(ー|～|う|ぅ|ウ|ゥ|l)|(ぴ|ピ))|(?<!#)朱夏)(?!警察)")
     && not (Regex.IsMatch(text, @"(\s|\A)@Saito_Shuka(\s|\Z)"))
     && not (Regex.IsMatch(text, @"(\s|\A)#朱夏取扱説明書(\s|\Z)"))
 

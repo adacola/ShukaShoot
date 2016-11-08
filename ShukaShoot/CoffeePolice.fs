@@ -1,9 +1,9 @@
-﻿module Adacola.ShukaShoot.CoffeePolice
+module Adacola.ShukaShoot.CoffeePolice
 
 open System.Text.RegularExpressions
 open System
 
-let activeTime = TimeSpan.FromMinutes(5.0)
+let activeTime = Model.config.CoffeePolice.ActiveMinutes |> float |> TimeSpan.FromMinutes
 
 let isStrictCoffee text =
     Regex.IsMatch(text, @"\Aコーヒーこぼした\Z")
